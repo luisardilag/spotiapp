@@ -5,7 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { SearchComponent } from './components/search/search.component';
 
-const routes: Routes = [
+const ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'artista', component: ArtistaComponent },
   { path: 'search', component: SearchComponent },
@@ -14,7 +14,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(ROUTES, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
