@@ -25,6 +25,8 @@ export class SearchComponent implements OnInit {
     this.artistas = data;
     this.loading = false;
 
+    console.log(data);
+
   });
   }
 
