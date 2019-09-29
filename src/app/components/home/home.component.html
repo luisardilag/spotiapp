@@ -1,11 +1,13 @@
+<!-- Loadins de la App -->
 <div class="mt-3" *ngIf="loading">
     <app-loading></app-loading>
 </div>
 
+<!-- Mensaje de Alerta -->
 <div class="alert alert-danger animated fadeIn m-3" *ngIf="error">
     <h3>Error</h3>
     <p>{{ mensajeError }}</p>
 </div>
-      
 
+<!-- Tarjeta que mustra los artistas -->
 <app-tarjetas [items]="nuevasCanciones"></app-tarjetas>

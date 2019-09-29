@@ -1,3 +1,4 @@
+<!-- ** Loading de la App ** -->
 <div class="mt-3" *ngIf="loading">
     <app-loading></app-loading>
 </div>
@@ -47,7 +48,7 @@
                         <!-- Reproductor de Audio HTML -->
                         <!-- <audio [src]="track.preview_url" controls></audio> -->
 
-                        <!-- Reproductor de Audio con el widget de Spotify (https://developer.spotify.com/documentation/widgets/generate/play-button/) -->
+                        <!-- Reproductor de Audio con el widget de Spotify -->
                         <iframe [src]="track.uri | domseguro" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </td>
                 </tr>

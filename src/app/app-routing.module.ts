@@ -1,10 +1,13 @@
+// MODULOS
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+// COMPONENTES
 import { HomeComponent } from './components/home/home.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { SearchComponent } from './components/search/search.component';
 
+// ARREGLO DE RUTAS
 const ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'artist/:id', component: ArtistaComponent },
