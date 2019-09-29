@@ -2,7 +2,8 @@
     <app-loading></app-loading>
 </div>
 
-<div class="row mt-3 animated fadeIn" *ngIf="!loading">
+<!-- ** Header Info del Artista ** -->
+<div class="row my-5 animated fadeIn" *ngIf="!loading">
     <div class="col-2">
         <img [src]="artista.images | noimage" alt="" class="img-thumbnail img-circle">
     </div>
@@ -20,5 +21,37 @@
             Regresar
         </button>
 
+    </div>
+</div>
+
+<!-- ** Tabla de los Top-Tracks ** -->
+<div class="row my-5">
+    <div class="col">
+        <table class="table table-dark bg-transparent">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Album</th>
+                    <th>Canción</th>
+                    <th>Vista Previa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let track of topTracks">
+                    <td>
+                        <img [src]="track.album.images[2].url" alt="imagen-album">
+                    </td>
+                    <td>{{ track.album.name }}</td>
+                    <td>{{ track.name }}</td>
+                    <td>
+                        <!-- Reproductor de Audio HTML -->
+                        <!-- <audio [src]="track.preview_url" controls></audio> -->
+
+                        <!-- Reproductor de Audio con el widget de Spotify (https://developer.spotify.com/documentation/widgets/generate/play-button/) -->
+                        <iframe [src]="track.uri | domseguro" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
